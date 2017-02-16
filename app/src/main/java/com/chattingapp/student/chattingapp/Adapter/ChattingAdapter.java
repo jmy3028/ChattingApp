@@ -1,11 +1,14 @@
 package com.chattingapp.student.chattingapp.Adapter;
 
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.TextView;
 
 import com.chattingapp.student.chattingapp.Model.ChattingModel;
+import com.chattingapp.student.chattingapp.R;
 
 import java.util.List;
 
@@ -18,23 +21,52 @@ public class ChattingAdapter extends BaseAdapter {
     private Context mContext;
     private List<ChattingModel> chattingList;
 
+    public ChattingAdapter(Context context, List<ChattingModel> chattingData) {
+        this.mContext = context;
+        this.chattingList = chattingData;
+    }
+
     @Override
     public int getCount() {
-        return 0;
+        return chattingList.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return null;
+        return chattingList.get(position);
     }
 
     @Override
     public long getItemId(int position) {
-        return 0;
+        return position;
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        return null;
+        ViewHolder viewHolder;
+        if (convertView == null) {
+            viewHolder = new ViewHolder();
+
+            convertView = LayoutInflater.from(parent.getContext())
+                    .inflate(R.layout.item_chatting, parent, false);
+
+            TextView chattingTextView = (TextView) convertView.findViewById(R.id.chatting_text);
+
+            viewHolder.chattingTextView = chattingTextView;
+
+            convertView.setTag(viewHolder);
+        } else {
+            viewHolder = (ViewHolder) convertView.getTag();
+        }
+
+        ChattingModel chattingModel = chattingList.get(position);
+
+        viewHolder.chattingTextView.setText(chattingModel.getMasg());
+
+        return convertView;
+    }
+
+    private static class ViewHolder {
+        TextView chattingTextView;
     }
 }
