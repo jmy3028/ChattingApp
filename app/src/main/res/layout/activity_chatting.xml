@@ -14,34 +14,21 @@
         android:background="#8fc7c7">
 
         <Button
+
             android:id="@+id/refresh_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="새로고침" />
 
         <Button
-            android:layout_alignParentEnd="true"
             android:id="@+id/menu_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
             android:text="+" />
 
     </RelativeLayout>
 
-    <LinearLayout
-        android:layout_above="@id/bottom_layout"
-        android:layout_below="@id/top_layout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-        </ScrollView>
-
-    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/bottom_layout"
@@ -66,4 +53,11 @@
 
     </LinearLayout>
 
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_layout"
+        android:layout_below="@id/top_layout">
+
+    </ListView>
 </RelativeLayout>
