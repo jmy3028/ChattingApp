@@ -4,6 +4,66 @@
     android:id="@+id/activity_chatting"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#93efd7"
     tools:context="com.chattingapp.student.chattingapp.ChattingActivity">
+
+    <RelativeLayout
+        android:id="@+id/top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#8fc7c7">
+
+        <Button
+            android:id="@+id/refresh_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="새로고침" />
+
+        <Button
+            android:layout_alignParentEnd="true"
+            android:id="@+id/menu_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_above="@id/bottom_layout"
+        android:layout_below="@id/top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </ScrollView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#aaffffff"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/chatting_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/send_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="send" />
+
+    </LinearLayout>
 
 </RelativeLayout>
