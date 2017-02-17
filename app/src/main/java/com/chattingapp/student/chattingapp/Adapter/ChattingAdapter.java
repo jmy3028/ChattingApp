@@ -1,6 +1,6 @@
 package com.chattingapp.student.chattingapp.Adapter;
 
-import android.content.Context;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,11 +18,9 @@ import java.util.List;
 
 public class ChattingAdapter extends BaseAdapter {
 
-    private Context mContext;
     private List<ChattingModel> chattingList;
 
-    public ChattingAdapter(Context context, List<ChattingModel> chattingData) {
-        this.mContext = context;
+    public ChattingAdapter(List<ChattingModel> chattingData) {
         this.chattingList = chattingData;
     }
 
@@ -62,6 +60,7 @@ public class ChattingAdapter extends BaseAdapter {
         ChattingModel chattingModel = chattingList.get(position);
 
         viewHolder.chattingTextView.setText(chattingModel.getMasg());
+        viewHolder.chattingTextView.setGravity(Gravity.RIGHT);
 
         return convertView;
     }
