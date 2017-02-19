@@ -15,7 +15,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ChattingActivity" />
+        <activity android:name=".ChattingActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar"/>
         <activity android:name=".AgreeActivity"></activity>
     </application>
 
