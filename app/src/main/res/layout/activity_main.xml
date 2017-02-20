@@ -7,6 +7,7 @@
     tools:context="com.chattingapp.student.chattingapp.MainActivity">
 
     <TextView
+        android:id="@+id/main_text"
         android:gravity="center"
         android:textSize="100sp"
         android:text="abc"
@@ -14,12 +15,12 @@
         android:layout_height="match_parent" />
 
     <Button
+        android:id="@+id/app_start_button"
         android:onClick="onClick"
         android:textSize="30sp"
         android:text="시작하기"
         android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-
 
 </RelativeLayout>
