@@ -13,7 +13,6 @@ import com.chattingapp.student.chattingapp.Adapter.ChattingAdapter;
 import com.chattingapp.student.chattingapp.Model.ChattingModel;
 import com.chattingapp.student.chattingapp.R;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -35,7 +34,6 @@ public class ChattingFragment extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_chatting,container,false);
-        message();
         return view;
     }
     @Override
