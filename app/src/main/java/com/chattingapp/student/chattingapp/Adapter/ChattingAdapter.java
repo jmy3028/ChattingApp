@@ -1,5 +1,7 @@
 package com.chattingapp.student.chattingapp.Adapter;
 
+
+import android.content.Context;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;

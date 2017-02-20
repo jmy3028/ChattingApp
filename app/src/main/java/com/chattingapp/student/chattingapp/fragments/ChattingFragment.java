@@ -36,6 +36,7 @@ public class ChattingFragment extends Fragment implements View.OnClickListener {
         View view = inflater.inflate(R.layout.activity_chatting,container,false);
         return view;
     }
+
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -56,5 +57,11 @@ public class ChattingFragment extends Fragment implements View.OnClickListener {
         switch (v.getId()) {
             case R.id.send_button :
         }
+
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+
+
     }
 }

@@ -7,12 +7,15 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.LinearLayout;
+import android.view.View;
+
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
 
         findViewById(R.id.app_start_button).setOnClickListener(this);
@@ -68,5 +71,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         });
 
 //        builder.setView(view)
+
+        setContentView(R.layout.activity_agree);
+
+
+    }
+
+
+    public void onClick(View view) {
+
     }
 }
