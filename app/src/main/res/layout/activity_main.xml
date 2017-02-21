@@ -15,7 +15,7 @@
         android:layout_height="match_parent" />
 
     <Button
-        android:id="@+id/app_start_button"
+        android:id="@+id/start_button"
         android:onClick="onClick"
         android:textSize="30sp"
         android:text="시작하기"
