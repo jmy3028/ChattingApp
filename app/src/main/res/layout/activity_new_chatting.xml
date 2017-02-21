@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_chatting"
+    android:id="@+id/activity_new_chatting"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#93efd7"
-    tools:context="com.chattingapp.student.chattingapp.MainActivity">
+    tools:context="com.chattingapp.student.chattingapp.NewChattingActivity">
 
     <Button
-        android:onClick="onClick"
-        android:id="@+id/start_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:text="새로고침" />
+    android:onClick="onClick"
+    android:id="@+id/start_button"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentStart="true"
+    android:text="새로고침" />
 
     <Button
         android:onClick="onClick"
@@ -55,17 +54,13 @@
     </LinearLayout>
 
     <fragment
+        android:id="@+id/chatting_fragment"
+        tools:layout="@layout/fragment_chatting"
         android:name="com.chattingapp.student.chattingapp.fragments.ChattingFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/bottom_layout"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true">
+        android:layout_alignParentTop="true"/>
 
-        <ListView
-            android:id="@+id/chatting_list"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-        </ListView>
-    </fragment>
 </RelativeLayout>
