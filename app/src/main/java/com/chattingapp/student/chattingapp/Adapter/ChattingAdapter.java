@@ -1,7 +1,6 @@
 package com.chattingapp.student.chattingapp.Adapter;
 
 
-import android.content.Context;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,6 +24,7 @@ public class ChattingAdapter extends BaseAdapter {
     public ChattingAdapter(List<ChattingModel> chattingData) {
         this.chattingList = chattingData;
     }
+
 
     @Override
     public int getCount() {
