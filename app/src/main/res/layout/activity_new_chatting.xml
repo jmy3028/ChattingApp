@@ -1,66 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_new_chatting"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.chattingapp.student.chattingapp.NewChattingActivity">
 
-    <Button
-    android:onClick="onClick"
-    android:id="@+id/start_button"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_alignParentStart="true"
-    android:text="새로고침" />
-
-    <Button
-        android:onClick="onClick"
-        android:id="@+id/end_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:text="신고" />
-
     <LinearLayout
-        android:id="@+id/bottom_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="#aaffffff"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:orientation="horizontal">
 
         <Button
+            android:id="@+id/start_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_weight="1"
             android:onClick="onClick"
-            android:id="@+id/plus_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="+" />
+            android:text="새로고침" />
 
-        <EditText
-            android:id="@+id/chatting_edit_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_weight="1" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:text="" />
 
         <Button
-            android:onClick="onClick"
-            android:id="@+id/send_button"
-            android:layout_width="wrap_content"
+            android:id="@+id/end_button"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="send" />
-
+            android:layout_gravity="end"
+            android:layout_weight="1"
+            android:onClick="onClick"
+            android:text="신고" />
     </LinearLayout>
 
     <fragment
         android:id="@+id/chatting_fragment"
-        tools:layout="@layout/fragment_chatting"
         android:name="com.chattingapp.student.chattingapp.fragments.ChattingFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@id/bottom_layout"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"/>
+        android:layout_height="0dp"
+        android:layout_weight="8"
+        tools:layout="@layout/fragment_chatting" />
 
-</RelativeLayout>
+    <LinearLayout
+        android:id="@+id/bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#aaffffff"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/plus_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onClick"
+            android:text="+" />
+
+        <EditText
+            android:id="@+id/chatting_edit_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3" />
+
+        <Button
+            android:id="@+id/send_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onClick"
+            android:text="send" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

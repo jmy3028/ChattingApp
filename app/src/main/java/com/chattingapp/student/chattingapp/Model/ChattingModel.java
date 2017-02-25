@@ -5,6 +5,7 @@ package com.chattingapp.student.chattingapp.Model;
  */
 
 public class ChattingModel {
+    private long id;
     String masg;
 
     public ChattingModel(String masg) {
@@ -17,6 +18,14 @@ public class ChattingModel {
 
     public void setMasg(String masg) {
         this.masg = masg;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     @Override

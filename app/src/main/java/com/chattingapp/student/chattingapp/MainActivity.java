@@ -82,11 +82,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //    @Override
 //    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 //        switch (buttonView.getId()) {
-//            case R.id.man_checkbox :
-//            case R.id.woman_checkbox :
-//            case R.id.man2_checkbox :
-//            case R.id.woman2_checkbox :
-//            case R.id.no_checkbox :
+//            case R.id.man_checkbox:
+//            case R.id.woman_checkbox:
+//            case R.id.man2_checkbox:
+//            case R.id.woman2_checkbox:
+//            case R.id.no_checkbox:
 //        }
 //    }
 }
