@@ -5,6 +5,13 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.chattingapp.student.chattingapp.Model.ChatClient;
+import com.chattingapp.student.chattingapp.Model.ChatServer;
+
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
+
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -20,12 +27,34 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.start_button:
-                Intent intent = new Intent(this,NewChattingActivity.class);
+                Intent intent = new Intent(this, NewChattingActivity.class);
                 startActivity(intent);
                 break;
 
         }
     }
+
+    public static void main(String[] args) {
+        ServerSocket serverSocket = null;
+        Socket socket = null;
+
+        try {
+            socket = serverSocket.accept();
+            serverSocket = new ServerSocket(5555);
+            Thread thread1 = new ChatClient(socket);
+            Thread thread2 = new ChatServer(socket);
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            try {
+                serverSocket.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+    }
+
 
 //    private void showAlertDialog() {
 //

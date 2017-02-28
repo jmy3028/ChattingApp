@@ -21,11 +21,14 @@ public class NewChattingActivity extends AppCompatActivity implements View.OnCli
         mEditText = (EditText) findViewById(R.id.chatting_edit_text);
         findViewById(R.id.send_button).setOnClickListener(this);
 
-        mChattingFragment = (ChattingFragment)getSupportFragmentManager().findFragmentById(R.id.chatting_fragment);
+        mChattingFragment = (ChattingFragment) getSupportFragmentManager().findFragmentById(R.id.chatting_fragment);
     }
 
     public void onClick(View view) {
-        String strMsg = mEditText.getText().toString();
-        mChattingFragment.sendMessage(strMsg);
+        switch (view.getId()) {
+            case R.id.send_button:
+                String strMsg = mEditText.getText().toString();
+                mChattingFragment.sendMessage(strMsg);
+        }
     }
 }

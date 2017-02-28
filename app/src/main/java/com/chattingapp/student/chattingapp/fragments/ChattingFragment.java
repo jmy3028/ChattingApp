@@ -24,11 +24,15 @@ public class ChattingFragment extends Fragment {
     private List<ChattingModel> mChattingList = new ArrayList<>();
     private ChattingAdapter mAdapter;
 
+    public ChattingFragment() {
+    }
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_chatting, container, false);
     }
+
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);

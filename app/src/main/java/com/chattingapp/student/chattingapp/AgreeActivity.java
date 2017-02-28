@@ -1,7 +1,8 @@
 package com.chattingapp.student.chattingapp;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
@@ -29,6 +30,9 @@ public class AgreeActivity extends AppCompatActivity {
             case R.id.no_button:
                 break;
             case R.id.ok_button:
+                Intent intent = new Intent(this, MainActivity.class);
+                startActivity(intent);
+                finish();
                 break;
         }
     }
