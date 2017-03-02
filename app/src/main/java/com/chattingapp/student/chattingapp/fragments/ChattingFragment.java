@@ -11,6 +11,7 @@ import android.widget.ListView;
 import com.chattingapp.student.chattingapp.Adapter.ChattingAdapter;
 import com.chattingapp.student.chattingapp.Model.ChattingModel;
 import com.chattingapp.student.chattingapp.R;
+import com.chattingapp.student.chattingapp.server.ReceiverThread;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +24,7 @@ public class ChattingFragment extends Fragment {
 
     private List<ChattingModel> mChattingList = new ArrayList<>();
     private ChattingAdapter mAdapter;
+    private ReceiverThread receiverThread;
 
     public ChattingFragment() {
     }
