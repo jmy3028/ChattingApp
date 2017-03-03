@@ -1,7 +1,10 @@
 package com.chattingapp.student.chattingapp.fragments;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
+import android.support.annotation.WorkerThread;
+import android.support.test.espresso.core.deps.guava.eventbus.Subscribe;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,10 +12,11 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.chattingapp.student.chattingapp.Adapter.ChattingAdapter;
+import com.chattingapp.student.chattingapp.Model.ChatClient;
 import com.chattingapp.student.chattingapp.Model.ChattingModel;
 import com.chattingapp.student.chattingapp.R;
-import com.chattingapp.student.chattingapp.server.ReceiverThread;
 
+import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,7 +28,10 @@ public class ChattingFragment extends Fragment {
 
     private List<ChattingModel> mChattingList = new ArrayList<>();
     private ChattingAdapter mAdapter;
-    private ReceiverThread receiverThread;
+    private ChatClient mChatClient;
+    private Socket mSocket;
+    private Handler mHandler;
+
 
     public ChattingFragment() {
     }
@@ -44,10 +51,34 @@ public class ChattingFragment extends Fragment {
         mAdapter = new ChattingAdapter(mChattingList);
 
         listView.setAdapter(mAdapter);
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                mChatClient = new ChatClient(mSocket);
+                mChatClient.connect();
+            }
+        }).start();
     }
 
-    public void sendMessage(String strMsg) {
-        mChattingList.add(new ChattingModel(strMsg));
-        mAdapter.notifyDataSetChanged();
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+
+        mChatClient.close();
+    }
+
+    @Subscribe
+    @WorkerThread
+    protected void onReceive(final ChattingModel chattingModel) {
+
+        mHandler = new Handler();
+        mHandler.post(new Runnable() {
+            @Override
+            public void run() {
+                mChattingList.add(chattingModel);
+                mAdapter.notifyDataSetChanged();
+            }
+        });
     }
 }
