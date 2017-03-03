@@ -64,6 +64,8 @@ public class ChattingAdapter extends BaseAdapter {
         viewHolder.chattingTextView.setText(chattingModel.getMasg());
         viewHolder.chattingTextView.setGravity(Gravity.RIGHT);
 
+        convertView.setEnabled(false);
+
         return convertView;
     }
 
